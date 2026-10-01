@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gotonom/gotrack-integrations/blob/main/schema/events.schema.json",
+  "title": "GoTrack webhook events",
+  "description": "Bodies GoTrack POSTs to a webhook. Verify X-GoTrack-Signature (sha256= + hex HMAC-SHA256 of the raw body) before trusting any field.",
+  "oneOf": [
+    { "$ref": "#/$defs/product_event" },
+    { "$ref": "#/$defs/screen_event" },
+    { "$ref": "#/$defs/touch_interaction" },
+    { "$ref": "#/$defs/test" }
+  ],
+  "$defs": {
+    "product_event": {
+      "type": "object",
+      "required": ["type", "track_id", "timestamp"],
+      "properties": {
+        "type": { "enum": ["pickup", "multiple_pickup", "return"] },
+        "track_id": { "type": "integer", "description": "Short-lived number within one camera. Identifies no one; repeats over time." },
+        "rack_zone": { "type": ["string", "null"] },
+        "evidence_frames": { "type": "integer" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "When the event happened in the store." },
+        "clock_synced": { "type": ["boolean", "null"], "description": "Whether the store device's clock was synchronised at that moment." },
+        "variant_id": { "type": "string" },
+        "product_name": { "type": "string" },
+        "sku": { "type": ["string", "null"] },
+        "color": { "type": ["string", "null"] },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confidence_tier": { "enum": ["HIGH", "MEDIUM", "LOW", "UNKNOWN"] },
+        "signage_content_url": { "type": ["string", "null"] },
+        "signage_content_type": { "type": ["string", "null"] },
+        "metrics": { "type": "object", "description": "Diagnostic values. Fields may change between versions; do not build on them." }
+      }
+    },
+    "screen_event": {
+      "type": "object",
+      "required": ["type", "screen_id"],
+      "properties": {
+        "type": { "enum": ["screen_paired", "screen_offline"] },
+        "screen_id": { "type": "string" },
+        "signage_screen_id": { "type": ["string", "null"] },
+        "rack_zone": { "type": ["string", "null"] },
+        "brand_id": { "type": ["string", "null"] }
+      }
+    },
+    "touch_interaction": {
+      "type": "object",
+      "required": ["type", "screen_id"],
+      "properties": {
+        "type": { "const": "touch_interaction" },
+        "screen_id": { "type": "string" },
+        "signage_screen_id": { "type": ["string", "null"] },
+        "brand_id": { "type": ["string", "null"] },
+        "variant_id": { "type": ["string", "null"] },
+        "product_name": { "type": ["string", "null"] }
+      }
+    },
+    "test": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "const": "test" },
+        "brand_id": { "type": "string" },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

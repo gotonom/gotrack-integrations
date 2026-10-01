@@ -4,7 +4,7 @@
 
 GOTONOM'un mağaza içi ürün analitiği ve akıllı ekran yazılımı **[GoTrack](https://gotrackgo.com)**'ten olayları almak ve doğrulamak için: imzalı webhook'lar, olay içerikleri ve Python, Node.js ve PHP ile doğrulama örnekleri.
 
-> **GoTrack nedir?** Mağazanın kendi kameralarıyla, müşterilerin hangi ürün ve rengi raftan aldığını, ne kadar elde tuttuğunu ve hangilerini geri bıraktığını ürün, bölge, saat ve mağaza bazında ölçer. Ürünün yanındaki ekran, ürün eldeyken onu gösterebilir. Görüntü mağazadaki bir cihazda işlenir ve varsayılan olarak saklanmaz; GoTrack yüz tanıma kullanmaz. Daha fazlası: [GoTrack nedir?](https://gotrackgo.com/tr/gotrack-nedir)
+> **GoTrack nedir?** Ürünlere yakın yerleştirilen kendi kameralarıyla (GOTONOM sağlar ya da belirttiği özelliklerde siz alırsınız), müşterilerin hangi ürün ve rengi raftan aldığını, ne kadar elde tuttuğunu ve hangilerini geri bıraktığını ürün, bölge, saat ve mağaza bazında ölçer. Ürünün yanındaki ekran, ürün eldeyken onu gösterebilir. Görüntü mağazadaki bir cihazda işlenir ve varsayılan olarak saklanmaz; GoTrack yüz tanıma kullanmaz. Daha fazlası: [GoTrack nedir?](https://gotrackgo.com/tr/gotrack-nedir)
 
 Örnekler: [`examples/`](examples/) · JSON Schema: [`schema/events.schema.json`](schema/events.schema.json)
 

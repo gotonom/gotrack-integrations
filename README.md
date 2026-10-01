@@ -4,7 +4,7 @@
 
 How to receive and verify events from **[GoTrack](https://gotrackgo.com)**, GOTONOM's in-store product analytics and smart-screen software: signed webhooks, the event payloads, and verification examples in Python, Node.js and PHP.
 
-> **What is GoTrack?** Using a store's own cameras, GoTrack measures which products and colours shoppers pick up, how long they hold them and which they put back, per product, zone, hour and store. A screen beside the shelf can show the product in hand. Images are processed on a device in the store and are not stored by default; GoTrack uses no face recognition. More: [What is GoTrack?](https://gotrackgo.com/en/what-is-gotrack) · [GoTrack nedir?](https://gotrackgo.com/tr/gotrack-nedir)
+> **What is GoTrack?** Using its own cameras, placed close to the products (supplied by GOTONOM or bought to its specification), GoTrack measures which products and colours shoppers pick up, how long they hold them and which they put back, per product, zone, hour and store. A screen beside the shelf can show the product in hand. Images are processed on a device in the store and are not stored by default; GoTrack uses no face recognition. More: [What is GoTrack?](https://gotrackgo.com/en/what-is-gotrack) · [GoTrack nedir?](https://gotrackgo.com/tr/gotrack-nedir)
 
 ## Contents
 
